@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+	<title>应用市场</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+		}
+
+		header {
+			background-color: #2196F3;
+			padding: 10px;
+			color: #fff;
+			text-align: center;
+		}
+
+		h1 {
+			margin: 0;
+			font-size: 25px;
+			font-weight: normal;
+		}
+
+		main {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			padding: 10px;
+		}
+
+		.card {
+			background-color: #f3f3f3;
+			padding: 20px;
+			margin: 10px;
+			width: 300px;
+			border-radius: 5px;
+		}
+
+		.card img {
+			max-width: 100%;
+			margin-bottom: 10px;
+			border-radius: 5px;
+		}
+
+		.card h2 {
+			font-size: 18px;
+			margin: 0 0 5px;
+		}
+
+		.card p {
+			font-size: 14px;
+			margin: 0;
+		}
+
+		.card a {
+			display: block;
+			background-color: #2196F3;
+			color: #fff;
+			padding: 10px;
+			text-align: center;
+			margin-top: 10px;
+			border-radius: 5px;
+			text-decoration: none;
+			font-size: 14px;
+		}
+
+		.card a:hover {
+			background-color: #2196F3;
+		}
+
+		#upload-container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 20px;
+		}
+
+		#upload-input {
+			display: none;
+		}
+
+		#upload-label {
+			background-color: #2196F3;
+			color: #fff;
+			padding: 10px;
+			text-align: center;
+			margin-right: 10px;
+			border-radius: 5px;
+			text-decoration: none;
+			font-size: 14px;
+			cursor: pointer;
+		}
+
+		#upload-label:hover {
+			background-color: #2196F3;
+		}
+
+		#filter-container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 20px;
+		}
+
+		.filter-btn {
+			background-color: #2196F3;
+			color: #fff;
+			padding: 10px;
+			text-align: center;
+			margin-right: 10px;
+			border-radius: 5px;
+			text-decoration: none;
+			font-size: 14px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+		}
+
+		.filter-btn:hover {
+			background-color: #2196F3;
+		}
+
+		.active {
+			background-color: #2196F3;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>酷腕市场</h1>
+	</header>
+	<main>
+		<div id="upload-container">
+			<input type="file" id="upload-input">
+			<label for="upload-input" id="upload-label">上传应用</label>
+			<select id="filter-select">
+				<option value="all">全部分类</option>
+				<option value="business">商务应用</option>
+				<option value="entertainment">娱乐应用</option>
+				<option value="education">教育应用</option>
+			</select>
+		</div>
+        <div id="filter-container">
+			<!--<button class="filter-btn active" data-filter="all">全部分类</button>
+			<button class="filter-btn" data-filter="business">商务应用</button>
+			<button class="filter-btn" data-filter="entertainment">娱乐应用</button>
+			<button class="filter-btn" data-filter="education">教育应用</button>-->
+		</div>
+		<div class="card" data-category="business">
+			<img src="http://mystore8081.cpolar.cn/t/082.jpg"width="200" height="200" alt="只因工具箱">
+            <h2>只因工具箱</h2>
+			<p>酷盒子合作伙伴小方块制作的纯鹿人专用软件，欢迎各位使用。</p>
+			<a href="https://mystore8081.vip.cpolar.cn/download/zygjx.apk">立即下载</a>
+		</div>
+		<div class="card">
+			<img src="http://mystore8081.cpolar.cn/t/0107.jpg"width="200" height="200" alt="应用2">
+			<h2>酷办</h2>
+			<p>这是一款非常好用的应用，可以帮助你更好地管理时间。</p>
+			<a href="https://mystore8081.vip.cpolar.cn/download/kbxtc.apk">立即下载</a>
+		</div>
+		<div class="card">
+			<img src="https://static.codemao.cn/coco/player/unstable/HkTwm9K8n.image/png?hash=FvO07R8tqeq7lTCe3tzVCU1oyCAq" width="200" height="200"alt="应用3">
+			<h2>酷腕市场[更新]</h2>
+			<p>这是一款非常好用的工具箱，点击“立即下载”可更新酷腕市场最新版本</p>
+			<a href="https://develope.lanzoug.com/file/?AGZaZFprBjcGDwI6VGEAbFFuU2teYlY7AGpReVBvBGpQP1tgW2RTaAMtBHxRbgdzUH0GYgAxB2MHclo5VG0GKQBhWn1abAZ0BjYCPVRsAGRRVFM/XmVWaQA2UWVQPAQwUGNbO1s/UzYDYAR0UWMHdVA3BjcAbgcwBzhabVQxBjYAJlp9WncGbwZiAmRUMgAyUSRTZl43VnsANlFnUCMEM1BhWzRbMFMzA2AENFE8BzBQMgZhAGsHZgdlWmtUaQY/ADdabFo2BmoGMQJlVDkAYFEzUzVeZ1Y2ADdRZlBoBCtQMVt8W21TIQMgBCFRYAd0UGMGZwBiBzYHMlpqVD4GNwAyWjxaIQYmBjkCOVRlAGdRNlNnXjdWbAAxUWNQOAQxUGRbNFs+UykDewR0UWMHalB9Bj4AbgczBzhaalQ7BjIAOFo9WjMGZAZ2AiFUcAB2UTZTZ143VmwAMVFkUDkEMlBkWzVbNVMhAyAEO1F1BztQOAYyAG4HKwcxWmpUOgYpADJaPFoyBnwGYgJkVDk=" >立即下载</a>
+		</div>
+		<div class="card">
+			<img src="https://static.codemao.cn/coco/player/unstable/rkiAvSZD3.image/png?hash=FnA9xr3HizTooLppDHFsYW6u61DN" width="200" height="200"alt="应用3">
+			<h2>我爱浏览器</h2>
+			<p>我爱科技云出品的浏览器，期待您的使用</p>
+			<a href=https://develope.lanzoug.com/file/?AGZbZVxtUGEFDAM7UGVdMVVqVW0FvFbcBZNau1WBUOAJ7wbkAdMPswT1CtQCs1DIBPYFXwNoUX1QZwEpXGFVJABrWypcZ1BtBT8DMFBbXTVVa1VtBWtWZAU1WmtVPFBjCT0GYAFrD30ENAovAmtQZQRuBTcDZFFrUGcBNVwmVSQAcFsxXDNQNAVhA2ZQK11sVTxVfwVoVmIFLVo4VTxQaQlqBmgBbg9jBGoKOQJjUGIEPAU5A21RZFBnAT5cYVVlAGNbblw0UD0FZAM3UDxdP1U7VWEFalZtBTFaclVoUCEJYgZ3ASkPKAQ3Ci4CP1A1BGMFMwNuUWVQYQE3XDJVZQAmW3hcaFBpBTYDM1A5XW1VOVVoBWxWYAU2WmhVPFBkCT8GfwFyD30ENAowAiFQbARuBSYDKVEjUCABOlwxVWIAN1s1XDlQNAVkA2JQMF1pVSlVJQUzViQFP1puVThQYAknBmABag9pBHwKbgJnUGQEcAUyA2xRag==>立即下载</a>
+		</div>
+		<!--<div class="card">
+			<img src="app4.jpg" alt="应用4">
+			<h2>应用4</h2>
+			<p>这是一款非常好用的应用，可以帮你提高学习效率。</p>
+			<a href="#">立即下载</a>-->
+		</div>
+	</main>
+</body>
+</html>
