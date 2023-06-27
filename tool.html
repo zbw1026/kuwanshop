@@ -3,72 +3,121 @@
 <head>
 	<title>实用工具</title>
 	<style>
-		/* 设置表格样式 */
-		table {
-			width: 80%;
-			border-collapse: collapse;
-		}
-		td, th {
-			border: 1px solid rgb(0, 217, 255);
+		.app {
+			display: flex;
+			align-items: center;
 			padding: 10px;
-			text-align: center;
+			border-radius: 10px;
+			background-color: #f0f0f0;
+			margin-bottom: 10px;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 		}
+		.app-icon img {
+  width: 50px;
+  height: 50px;
+}
+		
+		.app-name {
+			font-size: 20px;
+		}
+		
+		.app-version {
+			font-size: 14px;
+			color: #666;
+			margin-top: 5px;
+		}
+		
+		.app-size {
+			font-size: 14px;
+			color: #666;
+			margin-top: 5px;
+			margin-left: auto;
+		}
+		
 	</style>
 </head>
 <body>
 	<button onclick="window.location.href='index.html';" style="font-size: 20px; color: #fff; background-color: #2196f3; border: none; padding: 10px 20px;">返回</button>
 	<!-- 创建跳转按钮 -->
 	<button onclick="window.location.href='https://wwu.lanzoub.com/b04e56uni';" style="font-size: 20px; color: #fff; background-color: #2196f3; border: none; padding: 10px 20px;">跳转</button>
-	<table style="width: 40%;">
-		<thead>
-			<tr>
-				<th>应用名</th>
-				<th>版本号</th>
-				<th>大小</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>Via</td>
-				<td>4.4.6</td>
-				<td>3.95mb</td>
-			</tr>
-			<tr>
-				<td>腕上小纸条</td>
-				<td>2.0.0</td>
-				<td>3.5mb</td>
-			</tr>
-			<tr>
-				<td>文件管理器</td>
-				<td>1.19</td>
-				<td>8.1mb</td>
-			</tr>
-			<tr>
-				<td>作业帮家长版</td>
-				<td>1.0.0</td>
-				<td>5.4mb</td>
-			</tr>
-			<tr>
-				<td>最美天气</td>
-				<td>1.1.5</td>
-				<td>6.23mb</td>
-			</tr>
-			<tr>
-				<td>搜狗输入法</td>
-				<td>2.6</td>
-				<td>15.4mb</td>
-			</tr>
-			<tr>
-				<td>抬腕文件</td>
-				<td>22.9</td>
-				<td>523kb</td>
-			</tr>
-			<tr>
-				<td>唯趣应用商店</td>
-				<td>未知</td>
-				<td>5.0.1mb</td>
-			</tr>
-		</tbody>
-	</table>
-</body>
-</html>
+		<div class="app">
+			<div class="app-icon">
+				<img src="https://img.logojiang.com/wp-content/uploads/2020/04/2020-04-14-37660366logojiang.jpg" alt="应用图标">
+			</div>
+			<div class="app-info">
+				<div class="app-name">Via</div>
+				<div class="app-version">4.46</div>
+			</div>
+			<div class="app-size">3.95mb</div>
+		 </div>
+        <div class="app">
+			<div class="app-icon">
+				<img src="http://img.hanmaidj.com/upload/202303/09/091308284ac0ah3Gm9BHTO0xrs0.jpg" alt="应用图标">
+			</div>
+			<div class="app-info">
+				<div class="app-name">腕上小纸条</div>
+				<div class="app-version">2.0.0</div>
+			</div>
+			<div class="app-size">3.95mb</div>
+		 </div>
+		 <div class="app">
+			<div class="app-icon">
+				<img src="暂无.png" alt="应用图标">
+			</div>
+			<div class="app-info">
+				<div class="app-name">文件管理器</div>
+				<div class="app-version">1.19</div>
+			</div>
+			<div class="app-size">8.1mb</div>
+		 </div>
+		 <div class="app">
+			<div class="app-icon">
+				<img src="https://bkimg.cdn.bcebos.com/pic/8326cffc1e178a8214060df5f803738da977e8a9?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2U5Mg==,g_7,xp_5,yp_5/format,f_auto" alt="应用图标">
+			</div>
+			<div class="app-info">
+				<div class="app-name">作业帮家长版</div>
+				<div class="app-version">1.0.0</div>
+			</div>
+			<div class="app-size">5.4mb</div>
+		 </div>
+		 <div class="app">
+			<div class="app-icon">
+				<img src="https://app-center.cdn.bcebos.com/appcenter/sts/pcfile/5419161866/04a7488acd9340749f2ccbcf979c3642.png" alt="应用图标">
+			</div>
+			<div class="app-info">
+				<div class="app-name">最美天气</div>
+				<div class="app-version">1.1.5</div>
+			</div>
+			<div class="app-size">6.23mb</div>
+		 </div>
+		 <div class="app">
+			<div class="app-icon">
+				<img src="http://gdown.baidu.com/img/0/512_512/0bf75975e4964642627768edef8469f4.png" alt="应用图标">
+			</div>
+			<div class="app-info">
+				<div class="app-name">搜狗输入法</div>
+				<div class="app-version">2.6</div>
+			</div>
+			<div class="app-size">15.4mb</div>
+		 </div>
+		 <div class="app">
+			<div class="app-icon">
+				<img src="http://image.coolapk.com/apk_logo/2021/1225/10/icon-290674-o_1fnnobqlenmi127skb71cov11od18-uid-2411120@550x550.png" alt="应用图标">
+			</div>
+			<div class="app-info">
+				<div class="app-name">抬腕文件</div>
+				<div class="app-version">22.9</div>
+			</div>
+			<div class="app-size">523kb</div>
+		 </div>
+		 <div class="app">
+			<div class="app-icon">
+				<img src="http://pic.xlhs.com/up/2021-12/20211222156416431.png" alt="应用图标">
+			</div>
+			<div class="app-info">
+				<div class="app-name">唯趣应用商店</div>
+				<div class="app-version">未知</div>
+			</div>
+			<div class="app-size">5.0.1mb</div>
+		 </div>
+	</body>
