@@ -34,10 +34,69 @@
 			margin-top: 5px;
 			margin-left: auto;
 		}
-		
+		#circle {
+    position: fixed;
+    top: 50%;
+    right: 60px;
+    transform: translate(50%, -50%);
+    width: 80px;
+    height: 80px;
+    background-color: #2196f3;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  #circle img {
+    max-width: 60%;
+    max-height: 60%;
+  }
+  
+  #menu {
+    display: none;
+    position: fixed;
+    top: 50%;
+    right: 110px;
+    transform: translate(0, -50%);
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  #menu .button {
+    display: block;
+    margin-bottom: 10px;
+  }
 	</style>
 </head>
 <body>
+	<div id="circle">
+		<img src="menu.png" alt="Menu Icon">
+	  </div>
+	  <div id="menu">
+		<a href="https://wwu.lanzoub.com/b04e56uni" class="button">跳转</a>
+		<a href="index.html" class="button">返回</a>
+	  </div>
+	<script>
+	  var circle = document.getElementById('circle');
+	  var menu = document.getElementById('menu');
+	  var isOpen = false;
+  
+	  // 点击球显示/隐藏菜单
+	  circle.addEventListener('click', function() {
+		if (isOpen) {
+		  menu.style.display = 'none';
+		  isOpen = false;
+		} else {
+		  menu.style.display = 'block';
+		  isOpen = true;
+		}
+	  });
+	</script>
+</body>
+</html>
 	<button onclick="window.location.href='index.html';" style="font-size: 20px; color: #fff; background-color: #2196f3; border: none; padding: 10px 20px;">返回</button>
 	<!-- 创建跳转按钮 -->
 	<button onclick="window.location.href='https://wwu.lanzoub.com/b04e56uni';" style="font-size: 20px; color: #fff; background-color: #2196f3; border: none; padding: 10px 20px;">跳转</button>
