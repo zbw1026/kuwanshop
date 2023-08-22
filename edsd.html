@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>应用详情</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      padding: 20px;
+    }
+    
+    .app-container {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    
+    .app-icon {
+      background-image: url('appimage/com.edsd.png');
+      background-size: cover;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #2196f3;
+      margin: 0 auto;
+    }
+    
+    .app-title {
+      text-align: center;
+      color: #000000;
+      font-size: 24px;
+      margin-top: 20px;
+    }
+    
+    .app-description {
+      color: #666666;
+      margin-top: 10px;
+    }
+    
+    .download-button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #2196f3;
+      color: #ffffff;
+      text-align: center;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 20px;
+    }
+    .return-button {
+        background-image: url('appimage/返回.png');
+      background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #2196f3;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.image-container {
+  max-width: 100%;
+  height: auto;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+  </style>
+</head>
+<body>
+    <button class="return-button" onclick="goToIndex()"></button>
+    <script>function goToIndex() {
+        window.location.href = 'index.html';
+      }   
+      </script>   
+  <div class="app-container">
+    <div class="app-icon"></div>
+    <h1 class="app-title">易档商店</h1>
+    <div class="image-container">
+        <img src="appimage/ed.jpg" alt="Your Image">
+      </div>      
+    <p>版本号：1.5<br>大小：4.9mb<br>开发者：易档官方<br>酷腕安全检测：是</p>
+    <p class="app-description">这是一个精彩的应用商店，适用于各种安卓设备。</p>
+    <a class="download-button" href="https://fs-im-kefu.7moor-fs1.com/29397395/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1692671757614/%E6%98%93%E6%A1%A3%E5%95%86%E5%BA%97%E6%AD%A3%E5%BC%8F%E7%89%88%E6%9C%AC1.5.apk">下载应用</a>
+  </div>
+</body>
+</html>
