@@ -137,43 +137,47 @@
 		
 			// 在页面加载完成后调用showPopup函数
 			window.onload = showPopup;
+			function sendAppNumber(appNumber) {
+      // 将应用编号发送给第二个页面
+      window.location.href = "receiver.html?appNumber=" + appNumber;
+    }
 		  </script>
 	<body>
-		<div class="card" data-category="business">
-			<img src="http://mystore8081.cpolar.cn/t/082.jpg"width="200" height="200" alt="只因工具箱">
-            <h2>只因工具箱</h2>
-			<p>酷盒子合作伙伴小方块制作的纯鹿人专用软件，欢迎各位使用。</p>
-			<a href="https://mystore8081.vip.cpolar.cn/download/zygjx.apk">立即下载</a>
-		</div>
 		<div class="card">
 			<img src="https://fs-im-kefu.7moor-fs1.com/29397395/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1692671757734/com.edsd.png"width="200" height="200" alt="应用2">
 			<h2>易档商店</h2>
 			<p>[友商]一款由易档官方出品的手表应用商店</p>
-			<a href="edsd.html">查看详情</a>
+			<a onclick="sendAppNumber(1)">详细信息</a>
 		</div>
 		<div class="card">
 			<img src="http://mystore8081.cpolar.cn/t/0107.jpg"width="200" height="200" alt="应用2">
 			<h2>酷办</h2>
 			<p>这是一款非常好用的应用，可以帮助你更好地管理时间。</p>
-			<a href="https://mystore8081.vip.cpolar.cn/download/kbxtc.apk">立即下载</a>
+			<a onclick="sendAppNumber(2)">详细信息</a>
 		</div>
 		<div class="card">
 			<img src="https://static.codemao.cn/coco/player/unstable/HkTwm9K8n.image/png?hash=FvO07R8tqeq7lTCe3tzVCU1oyCAq" width="200" height="200"alt="应用3">
 			<h2>酷腕市场</h2>
-			<p>这是一款好用的应用市场兼工具箱，请点击“立即下载”获取</p>
-			<a href="https://fs-im-kefu.7moor-fs1.com/29397395/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1687604720133/%E9%85%B7%E8%85%95%E5%B8%82%E5%9C%BA1.4.3.apk" >立即下载</a>
+			<p>这是一款好用的应用市场兼工具箱，请点击“详细信息”获取</p>
+			<a href="https://fs-im-kefu.7moor-fs1.com/29397395/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1687604720133/%E9%85%B7%E8%85%95%E5%B8%82%E5%9C%BA1.4.3.apk" >详细信息</a>
 		</div>
 		<div class="card">
 			<img src="https://static.codemao.cn/coco/player/unstable/rkiAvSZD3.image/png?hash=FnA9xr3HizTooLppDHFsYW6u61DN" width="200" height="200"alt="应用3">
 			<h2>我爱浏览器</h2>
 			<p>我爱科技云出品的浏览器，目前已经更新4.0版本！期待您的使用 密码：0000</p>
-			<a href=https://wwu.lanzoub.com/iLABP0r4h9oh>立即下载</a>
+			<a href=https://wwu.lanzoub.com/iLABP0r4h9oh>详细信息</a>
+		</div>
+		<div class="card" data-category="business">
+			<img src="http://mystore8081.cpolar.cn/t/082.jpg"width="200" height="200" alt="只因工具箱">
+            <h2>只因工具箱</h2>
+			<p>酷盒子合作伙伴小方块制作的纯鹿人专用软件，欢迎各位使用。</p>
+			<a onclick="sendAppNumber(3)">详细信息</a>
 		</div>
 		<div class="card">
 			<img src="https://static.codemao.cn/coco/player/unstable/By1Jc3Mvh.image/png?hash=FqkXnWTlyvcF586rkFQ1voDnM46Y" width="200" height="200"alt="应用3">
 			<h2>酷工具</h2>
 			<p>一款以简为中心的工具箱，欢迎您的使用，提取码：0000</p>
-			<a href="https://wwu.lanzoub.com/ihrOm0rbfdli" >立即下载</a>
+			<a href="https://wwu.lanzoub.com/ihrOm0rbfdli" >详细信息</a>
 		</div>
 		<div class="card">
 			<img src="https://static.codemao.cn/coco/player/unstable/H18gIKqwn.image/png?hash=Fnth4hMcOLeXmVN42nzBthKdROvk" width="200" height="200" alt="应用3">

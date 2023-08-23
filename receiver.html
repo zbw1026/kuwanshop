@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>应用信息</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2196f3">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    h1 {
+      color: #2196f3;
+      text-align: center;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+
+    #appName {
+      font-weight: bold;
+      color: #000;
+    }
+
+    #appSize, #appVersion {
+      font-style: italic;
+    }
+    button {
+      background-color: #2196f3;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    a#downloadButton {
+      text-align: center;
+      display: block;
+      margin: 20px auto;
+    }
+    img#appIcon {
+  max-width: 100%;
+  display: block;
+  margin: 20px auto;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.return-button {
+        background-image: url('appimage/返回.png');
+      background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #2196f3;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+  </style>
+  <script>
+    function loadAppInfo() {
+      var appInfo = {
+        1: {name: "易档商店", size: "4.9MB", downloadUrl: "https://fs-im-kefu.7moor-fs1.com/29397395/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1692671757614/%E6%98%93%E6%A1%A3%E5%95%86%E5%BA%97%E6%AD%A3%E5%BC%8F%E7%89%88%E6%9C%AC1.5.apk", version: "1.5", screenshotUrl: "appimage/ed.jpg", iconUrl: "appimage/com.edsd.png"},
+        2: {name: "酷办", size: "8.8MB", downloadUrl: "https://mystore8081.vip.cpolar.cn/download/kbxtc.apk", version: "1.0", screenshotUrl: "appimage/暂无.png", iconUrl: "http://mystore8081.cpolar.cn/t/0107.jpg"},
+        3: {name: "只因工具箱", size: "6.4MB", downloadUrl: "https://mystore8081.vip.cpolar.cn/download/zygjx.apk", version: "1.0.0", screenshotUrl: "appimage/暂无.png", iconUrl: "http://mystore8081.cpolar.cn/t/082.jpg"}
+      };
+
+      var urlParams = new URLSearchParams(window.location.search);
+      var appNumber = parseInt(urlParams.get('appNumber'));
+
+      var appNameElement = document.getElementById("appName");
+      var appSizeElement = document.getElementById("appSize");
+      var appVersionElement = document.getElementById("appVersion");
+      var downloadButton = document.getElementById("downloadButton");
+      var screenshotImage = document.getElementById("screenshotImage");
+      var appIconImage = document.getElementById("appIcon");
+
+      if (appInfo.hasOwnProperty(appNumber)) {
+        var appData = appInfo[appNumber];
+        appNameElement.textContent = appData.name;
+        appSizeElement.textContent = appData.size;
+        appVersionElement.textContent = appData.version;
+
+        downloadButton.href = appData.downloadUrl;
+        downloadButton.style.display = "block"; // 显示下载按钮
+
+        screenshotImage.src = appData.screenshotUrl; // 设置应用截图的 URL
+        screenshotImage.style.display = "block"; // 显示应用截图
+
+        appIconImage.src = appData.iconUrl; // 设置应用图标的 URL
+        appIconImage.style.display = "block"; // 显示应用图标
+      } else {
+        appNameElement.textContent = "404|应用不存在";
+        appSizeElement.textContent = "Unknown";
+        appVersionElement.textContent = "Unknown";
+        downloadButton.style.display = "none"; // 隐藏下载按钮
+
+        screenshotImage.style.display = "none"; // 隐藏应用截图
+        appIconImage.style.display = "none"; // 隐藏应用图标
+      }
+    }
+  </script>
+</head>
+<button class="return-button" onclick="goToIndex()"></button>
+<script>function goToIndex() {
+    window.location.href = 'index.html';
+  }   
+  </script>   
+<body onload="loadAppInfo()">
+  <h1>应用信息</h1>
+  <img id="appIcon" src="" class="app-icon">
+  <h1><span id="appName"></span></h1>
+  <h3>应用大小：<span id="appSize"></span></h3>
+  <h3>应用版本：<span id="appVersion"></span></h3>
+  <h3>酷腕安全检测：通过</h3>
+  <img id="screenshotImage" src="" alt="应用截图" style="max-width: 100%;">
+  <a id="downloadButton" download style="display: none;"><button>立即下载</button></a>
+</body>
+</html>
