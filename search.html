@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>应用搜索</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        .search-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .search-box {
+            padding: 10px;
+            border: 2px solid #2196f3;
+            border-radius: 20px;
+            width: 300px;
+            outline: none;
+        }
+        
+        .search-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #2196f3;
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        
+        .search-results {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .app-result {
+            margin-bottom: 10px;
+        }
+        
+        .app-name {
+            font-weight: bold;
+            color: #2196f3;
+        }
+        
+        .app-code {
+            margin-top: 5px;
+            color: gray;
+        }
+        
+        .jump-button {
+            margin-top: 5px;
+            padding: 5px 10px;
+            border: none;
+            background-color: #2196f3;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        var appList = [
+            {
+                name: '易档商店',
+                code: '001'
+            },
+            {
+                name: '酷办',
+                code: '002'
+            },
+            {
+                name: '只因工具箱',
+                code: '003'
+            }
+            // 在这里添加更多的应用对象
+        ];
+        
+        function search() {
+            var searchTerm = document.getElementById('searchTerm').value;
+            
+            var resultsContainer = document.getElementById('searchResults');
+            resultsContainer.innerHTML = '';
+            
+            if (searchTerm.trim() === '') {
+                var emptyInputDiv = document.createElement('div');
+                emptyInputDiv.innerText = '请输入搜索关键字。';
+                resultsContainer.appendChild(emptyInputDiv);
+                return;
+            }
+            
+            for (var i = 0; i < appList.length; i++) {
+                var app = appList[i];
+                var appName = app.name;
+                var appCode = app.code;
+                
+                if (appName.toLowerCase().includes(searchTerm.toLowerCase())) {
+                    var appDiv = document.createElement('div');
+                    appDiv.className = 'app-result';
+                    
+                    var appNameElement = document.createElement('div');
+                    appNameElement.className = 'app-name';
+                    appNameElement.innerText = appName;
+                    
+                    var appCodeElement = document.createElement('div');
+                    appCodeElement.className = 'app-code';
+                    appCodeElement.innerText = appCode;
+                    
+                    var jumpButton = document.createElement('button');
+                    jumpButton.className = 'jump-button';
+                    jumpButton.innerText = '跳转';
+                    jumpButton.setAttribute('onclick', 'sendAppNumber("' + appCode + '")');
+                    
+                    appDiv.appendChild(appNameElement);
+                    appDiv.appendChild(appCodeElement);
+                    appDiv.appendChild(jumpButton);
+                    
+                    resultsContainer.appendChild(appDiv);
+                }
+            }
+        }
+        
+        function sendAppNumber(code) {
+            // 执行相应操作，替换为实际的代码
+            // 例如，打开传递应用编码的接收页面
+            window.location.href = "receiver.html?appNumber=" + code;
+        }
+    </script>
+</head>
+<body>
+    <div class="search-container">
+        <input type="text" id="searchTerm" class="search-box" placeholder="输入搜索关键字">
+        <br>
+        <button onclick="search()" class="search-button">搜索</button>
+    </div>
+    
+    <div class="search-results" id="searchResults"></div>
+</body>
+</html>

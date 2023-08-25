@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+	<title>应用市场</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+		}
+
+		header {
+			background-color: #2196F3;
+			padding: 10px;
+			color: #fff;
+			text-align: center;
+		}
+
+		h1 {
+			margin: 0;
+			font-size: 25px;
+			font-weight: normal;
+		}
+
+		main {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			padding: 10px;
+		}
+
+		.card {
+			background-color: #f3f3f3;
+			padding: 20px;
+			margin: 10px;
+			width: 300px;
+			border-radius: 5px;
+		}
+
+		.card img {
+			max-width: 100%;
+			margin-bottom: 10px;
+			border-radius: 5px;
+		}
+
+		.card h2 {
+			font-size: 18px;
+			margin: 0 0 5px;
+		}
+
+		.card p {
+			font-size: 14px;
+			margin: 0;
+		}
+
+		.card a {
+			display: block;
+			background-color: #2196F3;
+			color: #fff;
+			padding: 10px;
+			text-align: center;
+			margin-top: 10px;
+			border-radius: 5px;
+			text-decoration: none;
+			font-size: 14px;
+		}
+
+		.card a:hover {
+			background-color: #2196F3;
+		}
+
+		#upload-container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 20px;
+		}
+
+		#upload-input {
+			display: none;
+		}
+
+		#upload-label {
+			background-color: #2196F3;
+			color: #fff;
+			padding: 10px;
+			text-align: center;
+			margin-right: 10px;
+			border-radius: 5px;
+			text-decoration: none;
+			font-size: 14px;
+			cursor: pointer;
+		}
+
+		#upload-label:hover {
+			background-color: #2196F3;
+		}
+
+		#filter-container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 20px;
+		}
+
+		.filter-btn {
+			background-color: #2196F3;
+			color: #fff;
+			padding: 10px;
+			text-align: center;
+			margin-right: 10px;
+			border-radius: 5px;
+			text-decoration: none;
+			font-size: 14px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+		}
+
+		.filter-btn:hover {
+			background-color: #2196f3;
+		}
+
+		.active {
+			background-color: #2196F3;
+		}
+		.return-button {
+        background-image: url('appimage/返回.png');
+      background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #2196f3;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+	</style>
+</head>
+<body>
+	<button class="return-button" onclick="goToIndex()"></button>
+<script>function goToIndex() {
+    window.location.href = 'index.html';
+  }   
+  </script>   
+  <h3>📑应用分类</h3>
+    <div class="card">
+        <img src="https://static.codemao.cn/coco/player/unstable/H18gIKqwn.image/png?hash=Fnth4hMcOLeXmVN42nzBthKdROvk" width="200" height="200" alt="应用3">
+        <h2>娱乐游戏</h2>
+        <p>这里是娱乐游戏分类的合集，你可以查看本应用商店收录的更多应用 </p>
+        <a href="game.html">前往分类</a>
+    </div>
+    <div class="card">
+        <img src="https://static.codemao.cn/coco/player/unstable/rJ_DUKcPn.image/png?hash=FoOB1p3OI9yiUtDKSlzCQJhcemfJ" width="200" height="200"alt="应用3">
+        <h2>实用工具</h2>
+        <p>这里是实用工具分类的合集，你可查看本应用商店收录的更多应用 </p>
+        <a href="tool.html">前往分类</a>
+    </div>
+    <div class="card">
+        <img src="https://static.codemao.cn/coco/player/unstable/rkMTIKqD3.image/png?hash=FtY_SpPhlg3MlEm5f4f5gV7Q2Gdf" width="200" height="200"alt="应用3">
+        <h2>通讯生活</h2>
+        <p>这里是通讯生活分类的合集，你可查看本应用商店收录的更多应用 </p>
+        <a href="life.html">前往分类</a>
+    </div>
+</body>

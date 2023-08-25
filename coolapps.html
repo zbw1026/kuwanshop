@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+    <script>
+        function sendAppNumber(appNumber) {
+              // 将应用编号发送给第二个页面
+              window.location.href = "receiver.html?appNumber=" + appNumber;
+            }
+          </script>
+          <style>
+            .return-button {
+        background-image: url('appimage/返回.png');
+      background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #2196f3;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+            body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+		}
+            .card {
+                    background-color: #f3f3f3;
+                    padding: 20px;
+                    margin: 10px;
+                    width: 300px;
+                    border-radius: 5px;
+                }
+                .card a {
+                    display: block;
+                    background-color: #2196F3;
+                    color: #fff;
+                    padding: 10px;
+                    text-align: center;
+                    margin-top: 10px;
+                    border-radius: 5px;
+                    text-decoration: none;
+                    font-size: 14px;
+                }
+                .card img {
+			max-width: 100%;
+			margin-bottom: 10px;
+			border-radius: 5px;
+		}
+          </style>
+</head>
+<body>
+    <button class="return-button" onclick="goToIndex()"></button>
+<script>function goToIndex() {
+    window.location.href = 'index.html';
+  }   
+  </script>   
+    <div class="card">
+        <img src="appimage/other/应用.png">
+        <p>在这里，您可以随机获取一个优质应用</p>
+        <a onclick="sendAppNumber(('00' + (Math.floor(Math.random() * 3) + 1)).slice(-3))">获取一个</a>
+    </div>
+</body>
+
