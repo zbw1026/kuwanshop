@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>应用设置</title>
+  <style>
+            #popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            width: 90%;
+            max-width: 500px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            z-index: 9999;
+        }
+
+        #popup .close-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            font-size: 16px;
+            color: #333;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+        }
+
+        #popup-image {
+            max-width: 100%;
+            max-height: 400px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            text-align: center;
+            padding: 10px 20px;
+            background-color: #2196f3;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0d8bf0;
+        }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #2196f3;
+      text-align: center;
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 10px;
+      color: #555;
+    }
+    .return-button {
+  display: inline-block; /* 或使用 inline-flex */
+  background-image: url('appimage/返回.png');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #2196f3;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button class="return-button" onclick="goToIndex()"></button>
+    <script>function goToIndex() {
+        window.location.href = 'index.html';
+      }   
+      </script>  
+    <h1>应用设置</h1> 
+    <p> <img src="appimage/icon.png" alt="应用图标" width="100" height="100"><br>应用版本: 3.0.0</p>
+    <div class="card">
+        <p>打赏：<button onclick="openPopup()">立即捐赠</button></p>
+    </div>
+    
+    <div id="popup" style="display: none;">
+        <button class="close-btn" onclick="closePopup()">×</button>
+        <br>
+        <img id="popup-image" src="image/zfb.jpg" alt="选择无效">
+        <br>
+        <button onclick="changeImage('https://zbw1026.github.io/coolbox/%E6%94%B6%E6%AC%BE.jpg')">支付宝</button>
+        <button onclick="changeImage('image/QQ.jpg')">QQ钱包</button>
+        <button onclick="changeImage('image/QQ.jpg')">微信支付</button>
+        <br>
+    </div>
+    
+    <script>
+        function openPopup() {
+            document.getElementById("popup").style.display = "block";
+        }
+    
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+    
+        function changeImage(imageUrl) {
+            document.getElementById("popup-image").src = imageUrl;
+        }
+    </script>
+    <p>QQ群：810471300</p>
+  </div>
+</body>
+</html>
+</html>

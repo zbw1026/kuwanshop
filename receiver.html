@@ -64,12 +64,39 @@
 }
   </style>
   <script>
-    function loadAppInfo() {
-      var appInfo = {
-        001: {name: "易档商店", size: "4.9MB", downloadUrl: "https://fs-im-kefu.7moor-fs1.com/29397395/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1692671757614/%E6%98%93%E6%A1%A3%E5%95%86%E5%BA%97%E6%AD%A3%E5%BC%8F%E7%89%88%E6%9C%AC1.5.apk", version: "1.5", screenshotUrl: "appimage/001/ed.jpg", iconUrl: "appimage/001/com.edsd.png"},
-        002: {name: "酷办", size: "8.8MB", downloadUrl: "https://mystore8081.vip.cpolar.cn/download/kbxtc.apk", version: "1.0", screenshotUrl: "appimage/暂无.png", iconUrl: "http://mystore8081.cpolar.cn/t/0107.jpg"},
-        003: {name: "只因工具箱", size: "6.4MB", downloadUrl: "https://mystore8081.vip.cpolar.cn/download/zygjx.apk", version: "1.0.0", screenshotUrl: "appimage/暂无.png", iconUrl: "http://mystore8081.cpolar.cn/t/082.jpg"}
-      };
+function loadAppInfo() {
+  var appInfo = {
+    001: {name: "易档商店", size: "4.9MB", downloadUrl: "https://fs-im-kefu.7moor-fs1.com/29397395/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1692671757614/%E6%98%93%E6%A1%A3%E5%95%86%E5%BA%97%E6%AD%A3%E5%BC%8F%E7%89%88%E6%9C%AC1.5.apk", version: "1.5", screenshotUrl: "appimage/001/ed.jpg", iconUrl: "appimage/001/com.edsd.png"},
+    002: {name: "酷办", size: "8.8MB", downloadUrl: "https://mystore8081.vip.cpolar.cn/download/kbxtc.apk", version: "1.0", screenshotUrl: "appimage/暂无.png", iconUrl: "http://mystore8081.cpolar.cn/t/0107.jpg"},
+    003: {name: "只因工具箱", size: "6.4MB", downloadUrl: "https://mystore8081.vip.cpolar.cn/download/zygjx.apk", version: "1.0.0", screenshotUrl: "appimage/暂无.png", iconUrl: "http://mystore8081.cpolar.cn/t/082.jpg"},
+    004: {name: "我爱浏览器", size: "10MB", downloadUrl: "https://xtcandmicrosoft.github.io/static/%E6%88%91%E7%88%B1%E6%B5%8F%E8%A7%88%E5%99%A85.0%EF%BC%88%E6%96%B9%E5%B1%8F%E7%89%88%EF%BC%89.apk", version: "1.0.0", screenshotUrl: "appimage/004/截图.png", iconUrl: "appimage/004/我爱浏览器.png"},
+    005: {name: "酷工具", size: "623KB", downloadUrl: "https://fs-im-kefu.7moor-fs1.com/29397395/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1692958908694/%E9%85%B7%E5%B7%A5%E5%85%B7.apk", version: "1.0.0", screenshotUrl: "appimage/005/截图.png", iconUrl: "appimage/005/图标.png"},
+    006: {name: "Wearbili", size: "35.6MB", downloadUrl: "#", version: "1.0", screenshotUrl: "appimage/006/截图.png", iconUrl: "appimage/006/图标.png"},
+    007: {name: "腾讯视频", size: "4.55MB", downloadUrl: "#", version: "1.0", screenshotUrl: "appimage/007/截图.png", iconUrl: "appimage/007/图标.png"},
+    008: {name: "腕上吃鸡", size:"489KB", downloadUrl: "#", version: "1.0", screenshotUrl: "appimage/008/截图.png", iconUrl: "appimage/008/图标.png"},
+    009: {name: "抖音", size: "5.46MB", downloadUrl: "#", version: "13.6", screenshotUrl: "appimage/009/截图.png", iconUrl: "appimage/009/图标.png"},
+    010: {name: "坤了个坤", size: "6.4MB", downloadUrl: "#", version: "1.0", screenshotUrl: "appimage/010/截图.png", iconUrl: "appimage/010/图标.png"},
+    011: {name: "我的世界", size: "90.1MB", downloadUrl: "#", version: "1.14.20.1", screenshotUrl: "appimage/011/截图.png", iconUrl: "appimage/011/图标.png"},
+    012: {name: "合成大西瓜on watch", size: "18.0MB", downloadUrl: "#", version: "1.0", screenshotUrl: "appimage/012/截图.png", iconUrl: "appimage/012/图标.png"},
+    013: {name: "2048", size: "2.51MB", downloadUrl: "#", version: "2.1", screenshotUrl: "appimage/013/截图.png", iconUrl: "appimage/013/图标.png"},
+    014: {name: "元气骑士", size: "40.5MB", downloadUrl: "#", version: "1.7.0", screenshotUrl: "appimage/014/截图.png", iconUrl: "appimage/014/图标.png"},
+    015: {name: "Skyriders", size: "37.3MB", downloadUrl: "#", version: "1.1.3", screenshotUrl: "appimage/015/截图.png", iconUrl: "appimage/015/图标.png"},
+    016: {name: "别踩白块儿", size: "5.03MB", downloadUrl: "#", version: "2.9.7", screenshotUrl: "appimage/016/截图.png", iconUrl: "appimage/016/图标.png"},
+    017: {name: "Gold Miner 2", size: "2.58MB", downloadUrl: "#", version: "1.2.5", screenshotUrl: "appimage/017/截图.png", iconUrl: "appimage/017/图标.png"},
+    018: {name: "狂野飙车5", size: "57.9MB", downloadUrl: "#", version: "1.1.3", screenshotUrl: "appimage/018/截图.png", iconUrl: "appimage/018/图标.png"},
+    019: {name: "[推荐]Via", size: "3.95MB", downloadUrl: "#", version: "4.46", screenshotUrl: "appimage/019/截图.png", iconUrl: "appimage/019/图标.png"},
+    020: {name: "[推荐]ES文件浏览器", size: "14.5MB", downloadUrl: "#", version: "4.1.8.4.2", screenshotUrl: "appimage/020/截图.png", iconUrl: "appimage/020/图标.png"},
+    021: {name: "[推荐]mini软件卸载", size: "603KB", downloadUrl: "#", version: "1.0", screenshotUrl: "appimage/021/截图.png", iconUrl: "appimage/021/图标.png"},
+    022: {name: "腕上小纸条", size: "3.95MB", downloadUrl: "#", version: "2.0.0", screenshotUrl: "appimage/022/截图.png", iconUrl: "appimage/022/图标.png"},
+    023: {name: "文件管理器", size: "8.1MB", downloadUrl: "#", version: "1.19", screenshotUrl: "appimage/023/截图.png", iconUrl: "appimage/023/图标.png"},
+    024: {name: "XTC工具箱", size: "2.0MB", downloadUrl: "#", version: "1.2", screenshotUrl: "appimage/024/截图.png", iconUrl: "appimage/024/图标.png"},
+    025: {name: "作业帮家长版", size: "5.4MB", downloadUrl: "#", version: "1.0.0", screenshotUrl: "appimage/025/截图.png", iconUrl: "appimage/025/图标.png"},
+    026: {name: "最美天气", size: "6.23MB", downloadUrl: "#", version: "1.1.5", screenshotUrl: "appimage/026/截图.png", iconUrl: "appimage/026/图标.png"},
+    027: {name: "搜狗输入法", size: "15.4MB", downloadUrl: "#", version: "2.6", screenshotUrl: "appimage/027/截图.png", iconUrl: "appimage/027/图标.png"},
+    028: {name: "抬腕文件", size: "523KB", downloadUrl: "#", version: "22.9", screenshotUrl: "appimage/028/截图.png", iconUrl: "appimage/028/图标.png"},
+    029: {name: "唯趣应用商店", size: "5.01MB", downloadUrl: "#", version: "未知", screenshotUrl: "appimage/029/截图.png", iconUrl: "appimage/029/图标.png"},
+  };
+
 
       var urlParams = new URLSearchParams(window.location.search);
       var appNumber = parseInt(urlParams.get('appNumber'));

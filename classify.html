@@ -31,6 +31,7 @@
 		}
 
 		.card {
+			position: relative;
 			background-color: #f3f3f3;
 			padding: 20px;
 			margin: 10px;
@@ -39,6 +40,8 @@
 		}
 
 		.card img {
+			float: left;
+            margin-right: 10px;
 			max-width: 100%;
 			margin-bottom: 10px;
 			border-radius: 5px;
@@ -125,8 +128,9 @@
 			background-color: #2196F3;
 		}
 		.return-button {
-        background-image: url('appimage/返回.png');
-      background-size: cover;
+  display: inline-block; /* 或使用 inline-flex */
+  background-image: url('appimage/返回.png');
+  background-size: cover;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -135,31 +139,45 @@
   outline: none;
   cursor: pointer;
 }
+
 	</style>
 </head>
+<main>
 <body>
 	<button class="return-button" onclick="goToIndex()"></button>
 <script>function goToIndex() {
     window.location.href = 'index.html';
   }   
-  </script>   
-  <h3>📑应用分类</h3>
+  </script>
     <div class="card">
-        <img src="https://static.codemao.cn/coco/player/unstable/H18gIKqwn.image/png?hash=Fnth4hMcOLeXmVN42nzBthKdROvk" width="200" height="200" alt="应用3">
-        <h2>娱乐游戏</h2>
-        <p>这里是娱乐游戏分类的合集，你可以查看本应用商店收录的更多应用 </p>
-        <a href="game.html">前往分类</a>
+        <img src="appimage/classify/casual.png" width="60" height="60">
+        <h2>趣味游戏</h2>
+        <p>挑战你的智力和反应力，探索无尽的娱乐世界。</p>
+        <a href="game.html">前往</a>
     </div>
     <div class="card">
-        <img src="https://static.codemao.cn/coco/player/unstable/rJ_DUKcPn.image/png?hash=FoOB1p3OI9yiUtDKSlzCQJhcemfJ" width="200" height="200"alt="应用3">
+        <img src="appimage/classify/tool.png" width="60" height="60">
         <h2>实用工具</h2>
-        <p>这里是实用工具分类的合集，你可查看本应用商店收录的更多应用 </p>
-        <a href="tool.html">前往分类</a>
+        <p>简化任务，提高工作效率，助您轻松完成工作。</p>
+        <a href="tool.html">前往</a>
     </div>
     <div class="card">
-        <img src="https://static.codemao.cn/coco/player/unstable/rkMTIKqD3.image/png?hash=FtY_SpPhlg3MlEm5f4f5gV7Q2Gdf" width="200" height="200"alt="应用3">
-        <h2>通讯生活</h2>
-        <p>这里是通讯生活分类的合集，你可查看本应用商店收录的更多应用 </p>
-        <a href="life.html">前往分类</a>
+        <img src="appimage/classify/communication.png" width="60" height="60">
+        <h2>通讯社交</h2>
+        <p>拉近距离，与亲友即时分享生活喜悦与快乐。</p>
+        <a href="chat.html">前往</a>
+    </div>
+	<div class="card">
+        <img src="appimage/classify/music.png" width="60" height="60">
+        <h2>影音媒体</h2>
+        <p>放松一刻，沉浸在影音的世界。</p>
+        <a href="chat.html">前往</a>
+    </div>
+	<div class="card">
+        <img src="appimage/classify/sys_tools.png" width="60" height="60">
+        <h2>系统工具</h2>
+        <p>安全保护 系统玩机，放心自始至终</p>
+        <a href="sys.html">前往</a>
     </div>
 </body>
+</main>

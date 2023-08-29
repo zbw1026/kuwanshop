@@ -58,7 +58,30 @@
             border-radius: 10px;
             cursor: pointer;
         }
+        a {
+			display: block;
+			background-color: #2196F3;
+			color: #fff;
+			padding: 10px;
+			text-align: center;
+			margin-top: 10px;
+			border-radius: 5px;
+			text-decoration: none;
+			font-size: 14px;
+		}
+        .return-button {
+        background-image: url('appimage/返回.png');
+      background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #2196f3;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
     </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         var appList = [
             {
@@ -72,7 +95,147 @@
             {
                 name: '只因工具箱',
                 code: '003'
-            }
+            },
+            {
+                name: '我爱浏览器',
+                code: '004'
+            },
+            {
+                name: '酷工具',
+                code: '005'
+            },
+            {
+        name: 'Wearbili',
+        code: '006'
+    },
+    {
+        name: '腾讯视频',
+        code: '007'
+    },
+    {
+        name: '腕上吃鸡',
+        code: '008'
+    },
+    {
+        name: '抖音',
+        code: '009'
+    },
+    {
+        name: '坤了个坤',
+        code: '010'
+    },
+    {
+        name: '我的世界',
+        code: '011'
+    },
+    {
+        name: '合成大西瓜on watch',
+        code: '012'
+    },
+    {
+        name: '2048',
+        code: '013'
+    },
+    {
+        name: '元气骑士',
+        code: '014'
+    },
+    {
+        name: 'Skyriders',
+        code: '015'
+    },
+    {
+        name: '别踩白块儿',
+        code: '016'
+    },
+    {
+        name: 'Gold Miner 2',
+        code: '017'
+    },
+    {
+        name: '狂野飙车5',
+        code: '018'
+    },
+    {
+        name: '[推荐]Via',
+        code: '019'
+    },
+    {
+        name: '[推荐]ES文件浏览器',
+        code: '020'
+    },
+    {
+        name: '[推荐]mini软件卸载',
+        code: '021'
+    },
+    {
+        name: '腕上小纸条',
+        code: '022'
+    },
+    {
+        name: '文件管理器',
+        code: '023'
+    },
+    {
+        name: 'XTC工具箱',
+        code: '024'
+    },
+    {
+        name: '作业帮家长版',
+        code: '025'
+    },
+    {
+        name: '最美天气',
+        code: '026'
+    },
+    {
+        name: '搜狗输入法',
+        code: '027'
+    },
+    {
+        name: '抬腕文件',
+        code: '028'
+    },
+    {
+        name: '唯趣应用商店',
+        code: '029'
+    },
+    {
+        name: 'Memory Cleaner',
+        code: '030'
+    },
+    {
+        name: 'Microsoft远程桌面',
+        code: '031'
+    },
+    {
+        name: 'poke 安装器',
+        code: '032'
+    },
+    {
+        name: '夸克',
+        code: '033'
+    },
+    {
+        name: '腕上公交',
+        code: '034'
+    },
+    {
+        name: '美团',
+        code: '035'
+    },
+    {
+        name: 'wearbox',
+        code: '036'
+    },
+    {
+        name: '微信',
+        code: '037'
+    },
+    {
+        name: 'QQ',
+        code: '038'
+    }
             // 在这里添加更多的应用对象
         ];
         
@@ -128,12 +291,17 @@
     </script>
 </head>
 <body>
+    <button class="return-button" onclick="goToIndex()"></button>
+<script>function goToIndex() {
+    window.location.href = 'index.html';
+  }   
+  </script>   
     <div class="search-container">
         <input type="text" id="searchTerm" class="search-box" placeholder="输入搜索关键字">
         <br>
         <button onclick="search()" class="search-button">搜索</button>
     </div>
-    
+    <a href="key.html">去试试口令搜索吧</a>
     <div class="search-results" id="searchResults"></div>
 </body>
 </html>

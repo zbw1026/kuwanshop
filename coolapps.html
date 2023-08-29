@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <head>
+  <title>应用推荐</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         function sendAppNumber(appNumber) {
               // 将应用编号发送给第二个页面
@@ -57,7 +59,7 @@
     <div class="card">
         <img src="appimage/other/应用.png">
         <p>在这里，您可以随机获取一个优质应用</p>
-        <a onclick="sendAppNumber(('00' + (Math.floor(Math.random() * 3) + 1)).slice(-3))">获取一个</a>
+        <a onclick="sendAppNumber(('00' + (Math.floor(Math.random() * 5) + 1)).slice(-3))">获取一个</a>
     </div>
 </body>
 

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>口令输入</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2196f3;
+        }
+
+        input[type="text"] {
+            width: 200px;
+            height: 30px;
+            font-size: 16px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100px;
+            height: 40px;
+            margin-top: 10px;
+            font-size: 16px;
+            background-color: #2196f3;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .return-button {
+  display: inline-block; /* 或使用 inline-flex */
+  background-image: url('appimage/返回.png');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #2196f3;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <button class="return-button" onclick="goToIndex()"></button>
+<script>function goToIndex() {
+    window.location.href = 'index.html';
+  }   
+  </script>   
+    <h1>口令搜索</h1>
+
+    <form action="receiver.html" method="get">
+        <input type="text" name="appNumber" maxlength="3" placeholder="请输入3位数字口令" required>
+        <br>
+        <button type="submit">获取</button>
+    </form>
+</body>
+</html>
