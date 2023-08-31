@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>URL数字检测</title>
+  <script>
+    function checkURL() {
+      var url = window.location.href;
+      var digits = parseInt(url.match(/id=(\d+)/)[1]);
+      
+      if (digits >= 4) {
+        document.getElementById("result").innerText = "😀请继续保持！您的软件已是最新版本。";
+      } else {
+        document.getElementById("result").innerText = "TAT您的软件不是最新版本。";
+        var btn = document.createElement("button");
+        btn.innerText = "下载新版本";
+        btn.onclick = function() {
+          window.location.href = "new.apk";
+        };
+        document.body.appendChild(btn);
+      }
+    }
+  </script>
+</head>
+<body onload="checkURL()">
+  <h1>软件更新</h1>
+  <div id="result"></div>
+</body>
+</html>
