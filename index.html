@@ -125,6 +125,43 @@
 		.active {
 			background-color: #2196F3;
 		}
+		 /* 轮播图容器样式 */
+		 .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px; /* 设置轮播图最大宽度 */
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        /* 图片样式 */
+        .slider-container img {
+            width: 100%;
+            height: auto;
+        }
+        
+        /* 左右箭头样式 */
+        .slider-prev,
+        .slider-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        
+        .slider-prev {
+            left: 10px;
+        }
+        
+        .slider-next {
+            right: 10px;
+        }
 	</style>
 </head>
 <body>
@@ -143,6 +180,53 @@
     }
 		  </script>
 	<body>
+		<div class="card">
+			<div class="slider-container">
+				<img src="adimg/1.png" alt="Image 1" onclick="window.location.href='#'">
+				<img src="adimg/2.png" alt="Image 2" onclick="window.location.href='#'">
+				<img src="adimg/3.png" alt="Image 3" onclick="window.location.href='#'">
+				<div class="slider-prev" onclick="previousSlide()">&#8249;</div>
+				<div class="slider-next" onclick="nextSlide()">&#8250;</div>
+			</div>
+			
+			<script>
+				var currentIndex = 0;
+				var slides = document.querySelectorAll('.slider-container img');
+				var totalSlides = slides.length;
+				
+				function showSlide(index) {
+					if (index < 0) {
+						index = totalSlides - 1;
+					} else if (index >= totalSlides) {
+						index = 0;
+					}
+					
+					// 隐藏所有图片
+					for (var i = 0; i < totalSlides; i++) {
+						slides[i].style.display = 'none';
+					}
+					
+					// 显示当前图片
+					slides[index].style.display = 'block';
+					
+					currentIndex = index;
+				}
+				
+				function nextSlide() {
+					showSlide(currentIndex + 1);
+				}
+				
+				function previousSlide() {
+					showSlide(currentIndex - 1);
+				}
+				
+				// 初始显示第一张图片
+				showSlide(0);
+				
+				// 每2秒切换一张图片
+				setInterval(nextSlide, 2000);
+			</script>
+		</div>
 		<div class="card">
 			<a href="search.html">🔍搜索应用</a>
 			<a href="coolapps.html">🏆coolapps</a>
