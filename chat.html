@@ -13,23 +13,30 @@
     }
 
     .app-container {
-      max-width: 400px;
+      max-width: 90%;
       margin-bottom: 20px;
       padding: 20px;
       background-color: #fff;
       border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
     }
 
-    h2 {
-      color: #2196f3;
-    }
-
-    img {
+    .app-icon {
       width: 50px;
       height: 50px;
       border-radius: 50%;
       margin-right: 10px;
+    }
+
+    .app-info {
+      flex-grow: 1;
+    }
+
+    h2 {
+      color: #2196f3;
+      margin: 0 0 10px;
     }
 
     .btn {
@@ -45,13 +52,36 @@
     .btn:hover {
       background-color: #0c7cd5;
     }
+    
+    #circle {
+      position: fixed;
+      top: 5%;
+      left: 0;
+      transform: translate(50%, -50%);
+      width: 50px;
+      height: 50px;
+      background-color: #2196f3;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    
+    #circle img {
+      max-width: 90%;
+      max-height: 30%;
+    }
   </style>
 </head>
 <body>
+  <div id="circle">
+		<a href="classify.html">
+		  <img src="menu.png" alt="Menu Icon">
+		</a>
+	  </div>
   <div id="appList"></div>
-
   <script>
-    // 应用信息列表，保存在HTML中
     var appData = [
       { name: "微信儿童版", icon: "http://pic.2265.com/upload/2023-5/2023561452281394.jpg", appNumber: "30" },
       { name: "搜狗短信", icon: "https://cimg.shoujiwan.com/upload/cimg/hicon/1/651c0376c979a16fccd1982889c12a5d.png", appNumber: "32" },
@@ -59,36 +89,35 @@
       // 添加更多的应用信息对象...
     ];
 
-    // 加载应用列表
     window.addEventListener("DOMContentLoaded", function () {
       var appListContainer = document.getElementById("appList");
 
-      // 遍历应用信息列表，动态生成应用框
       for (var i = 0; i < appData.length; i++) {
         var app = appData[i];
 
-        // 创建应用框元素
         var appBox = document.createElement("div");
         appBox.className = "app-container";
-        
-        // 添加应用图标
+
         var appIcon = document.createElement("img");
+        appIcon.className = "app-icon";
         appIcon.src = app.icon;
         appBox.appendChild(appIcon);
 
-        // 添加应用名称
+        var appInfo = document.createElement("div");
+        appInfo.className = "app-info";
+
         var appName = document.createElement("h2");
         appName.textContent = app.name;
-        appBox.appendChild(appName);
+        appInfo.appendChild(appName);
 
-        // 创建跳转按钮
+        appBox.appendChild(appInfo);
+
         var appButton = document.createElement("a");
         appButton.href = "receiver.html?appNumber=" + app.appNumber;
         appButton.className = "btn";
         appButton.textContent = "跳转";
         appBox.appendChild(appButton);
 
-        // 将应用框添加到列表容器中
         appListContainer.appendChild(appBox);
       }
     });
