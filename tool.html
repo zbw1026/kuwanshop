@@ -1,254 +1,138 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>实用工具</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style>
-		.app {
-			display: flex;
-			align-items: center;
-			padding: 10px;
-			border-radius: 10px;
-			background-color: #f0f0f0;
-			margin-bottom: 10px;
-			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-		}
-		.app-icon img {
-  width: 50px;
-  height: 50px;
-}
-		
-		.app-name {
-			font-size: 20px;
-		}
-		
-		.app-version {
-			font-size: 14px;
-			color: #666;
-			margin-top: 5px;
-		}
-		
-		.app-size {
-			font-size: 14px;
-			color: #666;
-			margin-top: 5px;
-			margin-left: auto;
-		}
-		#circle {
-    position: fixed;
-    top: 5%;
-    left: 0px;
-    transform: translate(50%, -50%);
-    width: 50px;
-    height: 50px;
-    background-color: #2196f3;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-  }
-  
-  #circle img {
-    max-width: 60%;
-    max-height: 60%;
-  }
-  
-  #menu {
-    display: none;
-    position: fixed;
-    top: 50%;
-    right: 110px;
-    transform: translate(0, -50%);
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  #menu .button {
-    display: block;
-    margin-bottom: 10px;
-  }
-  .download-button {
-    background-color: #2196f3;
-    border-radius: 5px;
-    padding: 10px;
-    color: white;
-    text-decoration: none;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>应用列表</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+      margin: 0;
+      padding: 20px;
+    }
 
-.download-button:hover {
-    background-color: #1976d2;
-}
-.app {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
+    .app-container {
+      max-width: 90%;
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+    }
 
-.app-info {
-    display: flex;
-    justify-content: space-between;
-    flex-grow: 1;
-}
-	</style>
+    .app-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .app-info {
+      flex-grow: 1;
+    }
+
+    h2 {
+      color: #2196f3;
+      margin: 0 0 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #2196f3;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #0c7cd5;
+    }
+    
+    #circle {
+      position: fixed;
+      top: 5%;
+      left: 0;
+      transform: translate(50%, -50%);
+      width: 50px;
+      height: 50px;
+      background-color: #2196f3;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    
+    #circle img {
+      max-width: 90%;
+      max-height: 30%;
+    }
+  </style>
 </head>
 <body>
-	<div id="circle">
+  <div id="circle">
 		<a href="classify.html">
 		  <img src="menu.png" alt="Menu Icon">
 		</a>
 	  </div>
+  <div id="appList"></div>
+  <script>
+    var appData = [
+    {name: "Via",icon: "https://img.logojiang.com/wp-content/uploads/2020/04/2020-04-14-37660366logojiang.jpg",appNumber: "19"},
+    {name: "ES文件浏览器",icon: "https://android-artworks.25pp.com/fs08/2022/11/24/4/2_a38001d5b664d0e3bdca6fa55d3578bc_con_130x130.png",appNumber: "20"},
+    {name: "mini软件卸载",icon: "https://android-artworks.25pp.com/fs08/2016/06/07/2/1_972b889e1f9465c8efb3f1dd3b6a68c3_con_130x130.png",appNumber: "21"},
+    {name: "腕上小纸条",icon: "https://fs-im-kefu.7moor-fs1.com/29397395/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1688440715667/1.png",appNumber: "22"},
+    {name: "文件管理器",icon: "http://pic.xlhs.com/up/2020-12/202012181427537534.png",appNumber: "23"},
+    {name: "只因工具箱",icon: "http://pic.xlhs.com/up/2023-2/20232191525465378.png",appNumber: "24"},
+    {name: "作业帮家长版",icon: "https://fs-im-kefu.7moor-fs1.com/29397395/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1688440821449/1.png",appNumber: "25"},
+	{name: "最美天气",icon: "https://app-center.cdn.bcebos.com/appcenter/sts/pcfile/5419161866/04a7488acd9340749f2ccbcf979c3642.png",appNumber: "26"},
+	{name: "搜狗输入法",icon: "http://gdown.baidu.com/img/0/512_512/0bf75975e4964642627768edef8469f4.png",appNumber: "27"},
+	{name: "抬腕文件",icon: "https://fs-im-kefu.7moor-fs1.com/29397395/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1688440859375/1.png",appNumber: "28"},
+	{name: "夜间屏幕调节器",icon: "http://pic.xlhs.com/up/2021-6/20216101447377016.png",appNumber: "29"},
+	{name: "Memory Cleaner",icon: "https://fs-im-kefu.7moor-fs1.com/29397395/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1688348247777/1.png",appNumber: "41"},
+	{name: "Microsoft远程桌面",icon: "http://pic.danji100.com/upload/2020-11/20201112173575213.png",appNumber: "42"},
+	{name: "poke 安装器",icon: "http://pic.xlhs.com/up/2022-2/20222231528497659.png",appNumber: "43"},
+	{name: "夸克手表版",icon: "https://fs-im-kefu.7moor-fs1.com/29397395/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1688349222571/1.png",appNumber: "44"},
+]
+
+
+    window.addEventListener("DOMContentLoaded", function () {
+      var appListContainer = document.getElementById("appList");
+
+      for (var i = 0; i < appData.length; i++) {
+        var app = appData[i];
+
+        var appBox = document.createElement("div");
+        appBox.className = "app-container";
+
+        var appIcon = document.createElement("img");
+        appIcon.className = "app-icon";
+        appIcon.src = app.icon;
+        appBox.appendChild(appIcon);
+
+        var appInfo = document.createElement("div");
+        appInfo.className = "app-info";
+
+        var appName = document.createElement("h2");
+        appName.textContent = app.name;
+        appInfo.appendChild(appName);
+
+        appBox.appendChild(appInfo);
+
+        var appButton = document.createElement("a");
+        appButton.href = "receiver.html?appNumber=" + app.appNumber;
+        appButton.className = "btn";
+        appButton.textContent = "跳转";
+        appBox.appendChild(appButton);
+
+        appListContainer.appendChild(appBox);
+      }
+    });
+  </script>
 </body>
-	<div class="app">
-		<div class="app-icon">
-			<img src="https://img.logojiang.com/wp-content/uploads/2020/04/2020-04-14-37660366logojiang.jpg" alt="应用图标">
-		</div>
-		<div class="app-info">
-			<div class="app-name">[推荐]Via</div>
-			<div class="app-version">4.46</div>
-		</div>
-		<a href="https://wwu.lanzoub.com/b04e56uni" class="download-button">3.95mb</a>
-	</div>
-	<div class="app">
-		<div class="app-icon">
-			<img src="https://android-artworks.25pp.com/fs08/2022/11/24/4/2_a38001d5b664d0e3bdca6fa55d3578bc_con_130x130.png" alt="应用图标">
-		</div>
-		<div class="app-info">
-			<div class="app-name">[推荐]ES文件浏览器</div>
-			<div class="app-version">4.1.8.4.2</div>
-		</div>
-		<a href="https://wwu.lanzoub.com/b04e56uni" class="download-button">14.5mb</a>
-	</div>
-	<div class="app">
-		<div class="app-icon">
-			<img src="https://android-artworks.25pp.com/fs08/2016/06/07/2/1_972b889e1f9465c8efb3f1dd3b6a68c3_con_130x130.png" alt="应用图标">
-		</div>
-		<div class="app-info">
-			<div class="app-name">[推荐]mini软件卸载</div>
-			<div class="app-version">1.0</div>
-		</div>
-		<a href="https://wwu.lanzoub.com/b04e56uni" class="download-button">603kb</a>
-	</div>
-	<div class="app">
-		<div class="app-icon">
-			<img src="https://fs-im-kefu.7moor-fs1.com/29397395/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1688440715667/1.png" alt="应用图标">
-		</div>
-		<div class="app-info">
-			<div class="app-name">腕上小纸条</div>
-			<div class="app-version">2.0.0</div>
-		</div>
-		<a href="https://wwu.lanzoub.com/b04e56uni" class="download-button">3.95mb</a>
-	</div>
-	<div class="app">
-		<div class="app-icon">
-			<img src="暂无.png" alt="应用图标">
-		</div>
-		<div class="app-info">
-			<div class="app-name">文件管理器</div>
-			<div class="app-version">1.19</div>
-		</div>
-		<a href="https://wwu.lanzoub.com/b04e56uni" class="download-button">8.1mb</a>
-	</div>
-	<div class="app">
-		<div class="app-icon">
-			<img src="https://fs-im-kefu.7moor-fs1.com/29397395/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1688440770241/1.png" alt="应用图标">
-		</div>
-		<div class="app-info">
-			<div class="app-name">只因工具箱</div>
-			<div class="app-version">3.0</div>
-		</div>
-		<a href="https://wwu.lanzoub.com/b04e56uni" class="download-button">6.42mb</a>
-	</div>
-	<div class="app">
-		<div class="app-icon">
-			<img src="https://fs-im-kefu.7moor-fs1.com/29397395/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1688440821449/1.png" alt="应用图标">
-		</div>
-		<div class="app-info">
-			<div class="app-name">作业帮家长版</div>
-			<div class="app-version">7.1.5</div>
-		</div>
-		<a class="download-button" href="https://wwu.lanzoub.com/b04e56uni" style="background-color: #2196f3">6.42mb</a>
-	</div>
-	<div class="app">
-		<div class="app-icon">
-			<img src="https://app-center.cdn.bcebos.com/appcenter/sts/pcfile/5419161866/04a7488acd9340749f2ccbcf979c3642.png" alt="应用图标">
-		</div>
-		<div class="app-info">
-			<div class="app-name">最美天气</div>
-			<div class="app-version">1.1.5</div>
-		</div>
-		<a class="download-button" href="https://wwu.lanzoub.com/b04e56uni" style="background-color: #2196f3">6.23mb</a>
-	</div>
-	<div class="app">
-		<div class="app-icon">
-			<img src="http://gdown.baidu.com/img/0/512_512/0bf75975e4964642627768edef8469f4.png" alt="应用图标">
-		</div>
-		<div class="app-info">
-			<div class="app-name">搜狗输入法</div>
-			<div class="app-version">2.8</div>
-		</div>
-		<a class="download-button" href="https://wwu.lanzoub.com/b04e56uni" style="background-color: #2196f3">20.9mb</a>
-	</div>
-	<div class="app">
-		<div class="app-icon">
-			<img src="https://fs-im-kefu.7moor-fs1.com/29397395/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1688440859375/1.png" alt="应用图标">
-		</div>
-		<div class="app-info">
-			<div class="app-name">抬腕文件</div>
-			<div class="app-version">22.9</div>
-		</div>
-		<a class="download-button" href="https://wwu.lanzoub.com/b04e56uni" style="background-color: #2196f3">523kb</a>
-	</div>
-	<div class="app">
-		<div class="app-icon">
-			<img src="http://pic.xlhs.com/up/2021-6/20216101447377016.png" alt="应用图标">
-		</div>
-		<div class="app-info">
-			<div class="app-name">夜间屏幕调节</div>
-			<div class="app-version">2.0.0</div>
-		</div>
-		<a class="download-button" href="https://wwu.lanzoub.com/b04e56uni" style="background-color: #2196f3">301Kb</a>
-	</div>
-	<div class="app">
-		<div class="app-icon">
-			<img src="https://fs-im-kefu.7moor-fs1.com/29397395/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1688348247777/1.png" alt="应用图标">
-		</div>
-		<div class="app-info">
-			<div class="app-name">Memory Cleaner</div>
-			<div class="app-version">1.0</div>
-		</div>
-		<a class="download-button" href="https://wwu.lanzoub.com/b04e56uni" style="background-color: #2196f3">247kb</a>
-	</div>
-		<div class="app">
-			<div class="app-icon">
-				<img src="https://src.onlinedown.net/new_img/apk_logo/2016/0627/12202_1467028783_6572.png" alt="应用图标">
-			</div>
-			<div class="app-info">
-				<div class="app-name">Microsoft远程桌面</div>
-				<div class="app-version">8.1.80.431</div>
-			</div>
-			<a class="download-button" href="https://wwu.lanzoub.com/b04e56uni" style="background-color: #2196f3">18.2mb</a>
-		</div>
-		<div class="app">
-			<div class="app-icon">
-				<img src="https://fs-im-kefu.7moor-fs1.com/29397395/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1688349222571/1.png" alt="应用图标">
-			</div>
-			<div class="app-info">
-				<div class="app-name">poke 安装器</div>
-				<div class="app-version">2.6</div>
-			</div>
-			<a class="download-button" href="https://wwu.lanzoub.com/b04e56uni" style="background-color: #2196f3">772kb</a>
-		</div>
-			<div class="app">
-				<div class="app-icon">
-					<img src="https://pp.myapp.com/ma_icon/0/icon_42375936_1688032705/256" alt="应用图标">
-				</div>
-				<div class="app-info">
-					<div class="app-name">夸克</div>
-					<div class="app-version">3.0.0.942</div>
-				</div>
-				<a class="download-button" href="https://wwu.lanzoub.com/b04e56uni" style="background-color: #2196f3">33.mb</a>
-			</div>
-		</body>
-	</html>
+</html>
