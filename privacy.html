@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>隐私协议</title>
+  <style>
+    #popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    width: 90%;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+}
+
+#popup .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+#popup-image {
+    max-width: 100%;
+    max-height: 400px;
+    margin-bottom: 10px;
+}
+
+button {
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #2196f3;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0d8bf0;
+}
+body {
+font-family: Arial, sans-serif;
+background-color: #f3f3f3;
+margin: 0;
+padding: 0;
+}
+
+.container {
+max-width: 400px;
+margin: 20px auto;
+padding: 20px;
+background-color: #fff;
+border-radius: 10px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+color: #2196f3;
+text-align: center;
+margin-top: 0;
+}
+
+p {
+margin-bottom: 10px;
+color: #555;
+}
+.return-button {
+display: inline-block; /* 或使用 inline-flex */
+background-image: url('appimage/返回.png');
+background-size: cover;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+background-color: #2196f3;
+border: none;
+outline: none;
+cursor: pointer;
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <button class="return-button" onclick="goToIndex()"></button>
+    <script>
+      function goToIndex() {
+        window.location.href = 'setting.html';
+      }   
+    </script>  
+    <h1>应用设置</h1> 
+    <h3 id="content"></h3>
+    <script>
+      // 使用JavaScript读取文本文件内容并显示在h3标签中
+      fetch('https://fs-im-kefu.7moor-fs1.com/29397395/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1696554158769/1.txt')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('content').textContent = data;
+        })
+        .catch(error => {
+          console.error('读取文件失败:', error);
+        });
+    </script>
+  </div>
+</body>
+</html>
