@@ -177,37 +177,6 @@ function loadAppInfo() {
   <h3>酷腕安全检测：通过</h3>
   <img id="screenshotImage" src="" alt="应用截图" style="max-width: 100%;">
   <a id="downloadButton" download style="display: none;"><button>立即下载</button></a>
-  <div>
-  <script>
-    function getRandomQuote() {
-      var quotes = [
-        "这个应用商店ui不错",
-        "软件有点少啊",
-        "666",
-        "额……要是有应用管理功能就更棒了",
-        "有人有反馈群群号没有",
-        "资源专区什么时候上线",
-        "友商的app全部下架啦?[doge]",
-        "比2.0版本好看多了",
-        "祝酷腕越来越好o(*￣▽￣*)ブ",
-        // 添加更多语录...
-      ];
-      var randomIndex = Math.floor(Math.random() * quotes.length);
-      return quotes[randomIndex];
-    }
 
-    function refreshQuote() {
-      var quoteElement = document.getElementById("quote");
-      quoteElement.innerHTML = getRandomQuote();
-    }
-
-    setInterval(refreshQuote, 3000); // 每3秒刷新一次语录
-
-    window.onload = refreshQuote; // 页面加载时刷新一次语录
-  </script>
-  <div class="quote-container">
-    <h3 class="h3">【评论弹幕】网友评论<h3 class="h3" id="quote"></h3></h3>
-  </div>
-  </div>
 </body>
 </html>
