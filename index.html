@@ -272,6 +272,47 @@
 			<a onclick="sendAppNumber(5)" >详细信息</a>
 		</div>
 		<div class="card">
+			<style>
+				/* 添加样式 */
+				.quote-container {
+				  background-color: #f2f2f2;
+				  border-radius: 10px;
+				  padding: 20px;
+				  display: inline-block;
+				}
+			  </style>
+			   <script>
+				function getRandomQuote() {
+				  var quotes = [
+					"这个应用商店ui不错",
+					"软件有点少啊",
+					"666",
+					"额……要是有应用管理功能就更棒了",
+					"有人有反馈群群号没有",
+					"资源专区什么时候上线",
+					"友商的app全部下架啦?[doge]",
+					"比2.0版本好看多了",
+					"祝酷腕越来越好o(*￣▽￣*)ブ",
+					// 添加更多语录...
+				  ];
+				  var randomIndex = Math.floor(Math.random() * quotes.length);
+				  return quotes[randomIndex];
+				}
+			
+				function refreshQuote() {
+				  var quoteElement = document.getElementById("quote");
+				  quoteElement.innerHTML = getRandomQuote();
+				}
+			
+				setInterval(refreshQuote, 3000); // 每3秒刷新一次语录
+			
+				window.onload = refreshQuote; // 页面加载时刷新一次语录
+			  </script>
+			<div class="quote-container">
+				<h3>【评论弹幕】网友评论<h3 id="quote"></h3></h3>
+			  </div>
+		</div>
+		<div class="card">
 			<img src="https://static.codemao.cn/coco/player/unstable/B1PFK3MD3.image/png?hash=FkrY_st84zi5fZ4FuYftOAvXQsZp" width="200" height="200"alt="应用3">
 			<h2>上传应用</h2>
 			<p>联系QQ3093711629</p>
